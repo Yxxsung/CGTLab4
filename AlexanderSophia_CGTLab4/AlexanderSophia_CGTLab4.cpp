@@ -39,7 +39,7 @@ void factorial(int& fValue, int& result_1) {
 	cout << "The result is: !" << fValue << "= ";
 
 	//the for loop will loop through and multiply the numbers until it reaches the number that the user input at the beginning
-	for (int i = 1; i <= fValue; ++i) {
+	for (int i = 1; i <= fValue, ++i;) {
 		//the parameters read: Integer i = 1, run as long as i is less than or equal to fValue (user input), and add one to i each time you run
 
 		//this cout statement prints the numbers as they're being multiplied so the user can see each number.
@@ -63,7 +63,7 @@ void arithmetic() {
 
 //function
 void geometric() {
-	
+	//remember the example is WRONG!! + not *!!
 }
 
 
