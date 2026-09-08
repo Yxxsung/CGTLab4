@@ -8,7 +8,7 @@
 using namespace std;
 
 //This function shows the menu to the player when called, but does not hold the cin for the selection itself.
-void PrintMenu() {
+void printMenu() {
 	cout << "Please Select which operation to perform:" << endl;
 	//\t tabs the line over, creating an indent and endl ends the line like a carraige return on a typewriter
 	cout << "\t1. Factorial" << endl;
@@ -19,15 +19,35 @@ void PrintMenu() {
 }
 
 
-void factorial() {
-	// I recommend writing your factorial code here
+//function takes an input from the user, verifies that it is positive, then finds the factorial value of that input
+void factorial(int& fValue) {
+	//&int is from the last lesson - it declares the variable that follows as a new integer so that we can use it later
+	// the factorial of 5 is notated as 5!= 1 * 2 * 3 * 4 * 5 = 120.
+
+	cout << "Please enter a POSITIVE number: ";
+	cin >> fValue;
+
+	//this if statement verifies that the input value is greater than 0. If it isn't, the statement will correct it.
+	if (fValue < 0) {
+		fValue = -fValue;
+	}
+	
+
+
 }
+
+//function
 void arithmetic() {
-	// I recommend writing your arithmetic series code here
+	
 }
+
+
+//function
 void geometric() {
-	// I recommend writing your geometric series code here
+	
 }
+
+
 int main() {
 	int choice;
 	char again;
