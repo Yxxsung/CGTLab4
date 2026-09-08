@@ -20,9 +20,12 @@ void printMenu() {
 
 
 //function takes an input from the user, verifies that it is positive, then finds the factorial value of that input
-void factorial(int& fValue) {
+void factorial(int& fValue, int& result_1) {
 	//&int is from the last lesson - it declares the variable that follows as a new integer so that we can use it later
 	// the factorial of 5 is notated as 5!= 1 * 2 * 3 * 4 * 5 = 120.
+
+	//This declares result as a longlong so that it can take 64 bits or 8 bytes. This enables the user to enter high values
+	//int result_1 = 1;
 
 	cout << "Please enter a POSITIVE number: ";
 	cin >> fValue;
@@ -32,7 +35,23 @@ void factorial(int& fValue) {
 		fValue = -fValue;
 	}
 	
+	//this cout statement prints the initial script so only the numbers and stars need to be added later
+	cout << "The result is: !" << fValue << "= ";
 
+	//the for loop will loop through and multiply the numbers until it reaches the number that the user input at the beginning
+	for (int i = 1; i <= fValue; ++i) {
+		//the parameters read: Integer i = 1, run as long as i is less than or equal to fValue (user input), and add one to i each time you run
+
+		//this cout statement prints the numbers as they're being multiplied so the user can see each number.
+		cout << i << " * ";
+
+		//the below line should take the result from the previous iteration and multiply it by the counter i until the loop ends
+		result_1 = result_1 * i;
+
+	}
+
+	//this prints out the final result at the end
+	cout << " = " << result_1 << endl;
 
 }
 
@@ -49,8 +68,14 @@ void geometric() {
 
 
 int main() {
+	
+	//space for declaring variables
 	int choice;
 	char again;
+	int fValue; //from Factorial function. Must be declared before use
+	int result_1; //from Factorial function. Must be declared before use
+
+
 	do {
 		printMenu();
 		cin >> choice;
@@ -59,7 +84,8 @@ int main() {
 			return 0;
 		}
 		else if (choice == 1) {
-			factorial();
+			factorial(fValue, result_1);
+			//factorial testing: 5 should output 120
 		}
 		else if (choice == 2) {
 			arithmetic();
