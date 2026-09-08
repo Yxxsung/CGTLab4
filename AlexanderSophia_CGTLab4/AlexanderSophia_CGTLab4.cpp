@@ -25,7 +25,7 @@ void factorial(int& fValue, int& result_1) {
 	// the factorial of 5 is notated as 5!= 1 * 2 * 3 * 4 * 5 = 120.
 
 	//This declares result as a longlong so that it can take 64 bits or 8 bytes. This enables the user to enter high values
-	//int result_1 = 1;
+	int result_1 = 1; //it wont let me define it, but I'm worried whatever it's initializing as is what's causing the weird output
 
 	cout << "Please enter a POSITIVE number: ";
 	cin >> fValue;
@@ -44,10 +44,12 @@ void factorial(int& fValue, int& result_1) {
 
 		//this cout statement prints the numbers as they're being multiplied so the user can see each number.
 		cout << i << " * ";
+		//when it prints, none of the i numbers are coming up negative.
 
 		//the below line should take the result from the previous iteration and multiply it by the counter i until the loop ends
-		result_1 = result_1 * i;
+		result_1 = result_1 * i; //see if you can find the problem by doing the math manually. it must be how it's initializing
 
+		//reversing the order of the previous two statements did nothing to help fix the wrong output problem. Where is the negative coming from??
 	}
 
 	//this prints out the final result at the end
