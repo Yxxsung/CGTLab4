@@ -57,9 +57,20 @@ void factorial(int& fValue, int& result_1) {
 
 }
 
-//function
-void arithmetic() {
+//function takes a starting value and the difference and adds the results. Ex: 3,5,7,9 has a start of 3 and a difference of 2
+void arithmetic(int&aStart, int&aDiff, int&aSeriesL) {
+	//the following lines prompt the user for the starting number, the difference between numbers, and the length of the series respectively
+	cout << "Please enter the number you would like to start at: ";
+	cin >> aStart;
+	cout << endl << "Please enter the desired difference between the numbers: ";
+	cin >> aDiff;
+	cout << endl << "Please enter the desired length of the series: ";
+	cin >> aSeriesL;
 	
+	//now we need to create a for loop that adds the numbers keeping in mind the starting number, difference and series length
+	for (int i = 0; i < aSeriesL; i + aDiff) {
+
+	}
 }
 
 
