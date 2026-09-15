@@ -88,7 +88,7 @@ int main() {
 	int fValue; //from Factorial function. Must be declared before use
 	int result_1; //from Factorial function. Must be declared before use
 
-
+	//this is a loop where everything inside is repeated as long as the user keeps inputting y or Y
 	do {
 		printMenu();
 		cin >> choice;
