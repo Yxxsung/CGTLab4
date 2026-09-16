@@ -58,7 +58,7 @@ void factorial(int& fValue, int& result_1) {
 }
 
 //function takes a starting value and the difference and adds the results. Ex: 3,5,7,9 has a start of 3 and a difference of 2
-void arithmetic(int&aStart, int&aDiff, int&aSeriesL) {
+void arithmetic(int&aStart, int&aDiff, int&aSeriesL, int& aresult) {
 	//the following lines prompt the user for the starting number, the difference between numbers, and the length of the series respectively
 	cout << "Please enter the number you would like to start at: ";
 	cin >> aStart;
@@ -68,15 +68,28 @@ void arithmetic(int&aStart, int&aDiff, int&aSeriesL) {
 	cin >> aSeriesL;
 	
 	//now we need to create a for loop that adds the numbers keeping in mind the starting number, difference and series length
-	for (int i = 0; i < aSeriesL; i + aDiff) {
+	for (int i = 0; i < aSeriesL; i + aDiff) { //this loop reads i = 0, for duration of i < series length, add the difference to i
+		
+		cout << i << " + ";
+		aresult = aresult + i; //this line should add the previous result to i to make the new result as we go.
 
 	}
 }
 
 
-//function
-void geometric() {
-	
+//function is supposed to take input from the user and solve a*r^i until i = series length
+void geometric(int& paramR, int& paramA, int& gSeriesL) {
+
+	//these next few lines will prompt the user for the necessary values
+	cout << "Please enter the value for Parameter R: ";
+	cin >> paramR;
+	cout << "Please enter the value for Parameter A: ";
+	cin >> paramA;
+	cout << "Please enter the desired length of the series: ";
+	cin >> gSeriesL;
+
+
+
 }
 
 
@@ -87,6 +100,13 @@ int main() {
 	char again;
 	int fValue; //from Factorial function. Must be declared before use
 	int result_1; //from Factorial function. Must be declared before use
+	int aStart; //from arithmetic function. Must be declared before use
+	int aDiff; //from arithmetic function. Must be declared before use
+	int aSeriesL; //from arithmetic function. Must be declared before use
+	int aresult; //from arithmetic function. Must be declared before use
+	int paramR; //from the geometric function. Must be declared before use
+	int paramA; //from the geometric function. Must be declared before use
+	int gSeriesL; //from the geometric function. Must be declared before use
 
 	//this is a loop where everything inside is repeated as long as the user keeps inputting y or Y
 	do {
@@ -101,10 +121,10 @@ int main() {
 			//factorial testing: 5 should output 120
 		}
 		else if (choice == 2) {
-			arithmetic();
+			arithmetic(aStart, aDiff, aSeriesL, aresult);
 		}
 		else if (choice == 3) {
-			geometric();
+			geometric(paramA, paramR, gSeriesL);
 		}
 		cout << "Go Again? [Y/N] ";
 		cin >> again;
