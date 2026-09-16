@@ -55,6 +55,7 @@ void factorial(int& fValue, int& result_1) {
 	//this prints out the final result at the end
 	cout << " = " << result_1 << endl;
 
+	result_1 = 1;
 }
 
 //function takes a starting value and the difference and adds the results. Ex: 3,5,7,9 has a start of 3 and a difference of 2
@@ -78,6 +79,8 @@ void arithmetic(int&aStart, int&aDiff, int&aSeriesL, int& aresult) {
 		aresult = aresult + currentValue; //establishes the new result number
 	}
 
+	aresult = 0;
+
 }
 
 
@@ -96,12 +99,14 @@ void geometric(int& paramR, int& paramA, int& gSeriesL, int& gresult) {
 
 	for (int i = 0; i < gSeriesL; i++) {
 
+		//use pow() not ^ for exponents
 		cout << (paramA * (pow(paramR,i))) << " + ";
 
-		gresult = gresult + (paramA * (paramR ^ i));
+		gresult = gresult + (paramA * (pow(paramR,i)));
 
 	}
 
+	gresult = 0;
 }
 
 
@@ -137,7 +142,7 @@ int main() {
 			arithmetic(aStart, aDiff, aSeriesL, aresult);
 		}
 		else if (choice == 3) {
-			geometric(paramA, paramR, gSeriesL, gresult);
+			geometric(paramR, paramA, gSeriesL, gresult);
 		}
 		cout << "Go Again? [Y/N] ";
 		cin >> again;
