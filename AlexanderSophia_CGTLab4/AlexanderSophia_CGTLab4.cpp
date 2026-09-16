@@ -78,7 +78,7 @@ void arithmetic(int&aStart, int&aDiff, int&aSeriesL, int& aresult) {
 
 
 //function is supposed to take input from the user and solve a*r^i until i = series length
-void geometric(int& paramR, int& paramA, int& gSeriesL) {
+void geometric(int& paramR, int& paramA, int& gSeriesL, int& gresult) {
 
 	//these next few lines will prompt the user for the necessary values
 	cout << "Please enter the value for Parameter R: ";
@@ -88,7 +88,13 @@ void geometric(int& paramR, int& paramA, int& gSeriesL) {
 	cout << "Please enter the desired length of the series: ";
 	cin >> gSeriesL;
 
+	for (int i = 0; i < gSeriesL; i++) {
 
+		cout << (paramA * (paramR ^ i)) << " + ";
+
+		gresult = gresult + (paramA * (paramR ^ i));
+
+	}
 
 }
 
@@ -107,6 +113,7 @@ int main() {
 	int paramR; //from the geometric function. Must be declared before use
 	int paramA; //from the geometric function. Must be declared before use
 	int gSeriesL; //from the geometric function. Must be declared before use
+	int gresult; //from geometric function. Must be declared before use
 
 	//this is a loop where everything inside is repeated as long as the user keeps inputting y or Y
 	do {
@@ -124,7 +131,7 @@ int main() {
 			arithmetic(aStart, aDiff, aSeriesL, aresult);
 		}
 		else if (choice == 3) {
-			geometric(paramA, paramR, gSeriesL);
+			geometric(paramA, paramR, gSeriesL, gresult);
 		}
 		cout << "Go Again? [Y/N] ";
 		cin >> again;
