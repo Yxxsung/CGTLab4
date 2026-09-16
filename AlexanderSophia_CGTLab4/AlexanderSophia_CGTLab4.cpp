@@ -3,6 +3,7 @@
 //09/08/26
 
 #include <iostream>
+#include <cmath> //included so we can use exponents in the geometric function
 
 //introduces the standard namespace so that we can use cin and cout
 using namespace std;
@@ -95,7 +96,7 @@ void geometric(int& paramR, int& paramA, int& gSeriesL, int& gresult) {
 
 	for (int i = 0; i < gSeriesL; i++) {
 
-		cout << (paramA * (paramR ^ i)) << " + ";
+		cout << (paramA * (pow(paramR,i))) << " + ";
 
 		gresult = gresult + (paramA * (paramR ^ i));
 
