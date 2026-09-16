@@ -24,8 +24,7 @@ void factorial(int& fValue, int& result_1) {
 	//&int is from the last lesson - it declares the variable that follows as a new integer so that we can use it later
 	// the factorial of 5 is notated as 5!= 1 * 2 * 3 * 4 * 5 = 120.
 
-	//This declares result as a longlong so that it can take 64 bits or 8 bytes. This enables the user to enter high values
-	result_1 = 1; //it wont let me define it, but I'm worried whatever it's initializing as is what's causing the weird output
+	result_1 = 1;
 
 	cout << "Please enter a POSITIVE number: ";
 	cin >> fValue;
@@ -36,7 +35,7 @@ void factorial(int& fValue, int& result_1) {
 	}
 	
 	//this cout statement prints the initial script so only the numbers and stars need to be added later
-	cout << "The result is: !" << fValue << "= ";
+	cout << "The result is: " << fValue << "!= ";
 
 	//the for loop will loop through and multiply the numbers until it reaches the number that the user input at the beginning
 	for (int i = 1; i <= fValue; ++i) {
@@ -59,6 +58,8 @@ void factorial(int& fValue, int& result_1) {
 
 //function takes a starting value and the difference and adds the results. Ex: 3,5,7,9 has a start of 3 and a difference of 2
 void arithmetic(int&aStart, int&aDiff, int&aSeriesL, int& aresult) {
+	aresult = 0; //intializes aresult
+
 	//the following lines prompt the user for the starting number, the difference between numbers, and the length of the series respectively
 	cout << "Please enter the number you would like to start at: ";
 	cin >> aStart;
@@ -68,12 +69,14 @@ void arithmetic(int&aStart, int&aDiff, int&aSeriesL, int& aresult) {
 	cin >> aSeriesL;
 	
 	//now we need to create a for loop that adds the numbers keeping in mind the starting number, difference and series length
-	for (int i = 0; i < aSeriesL; i + aDiff) { //this loop reads i = 0, for duration of i < series length, add the difference to i
-		
-		cout << i << " + ";
-		aresult = aresult + i; //this line should add the previous result to i to make the new result as we go.
 
+	for (int i = 0; i < aSeriesL; i++) { //reads for duratin i = 0, i < length of the series, increase i
+		int currentValue = aStart + (i * aDiff);  //sets current value as the starting value + i * the difference
+
+		cout << currentValue << " + "; //prints the current value so we see the whole series
+		aresult = aresult + currentValue; //establishes the new result number
 	}
+
 }
 
 
