@@ -79,6 +79,7 @@ void arithmetic(int&aStart, int&aDiff, int&aSeriesL, int& aresult) {
 		aresult = aresult + currentValue; //establishes the new result number
 	}
 
+	cout << " = " << aresult << endl;
 	aresult = 0;//resets so that value isnt kept the next time the function is run
 
 }
@@ -90,10 +91,12 @@ void geometric(int& paramR, int& paramA, int& gSeriesL, int& gresult) {
 
 
 	//these next few lines will prompt the user for the necessary values
-	cout << "Please enter the value for Parameter R: ";
-	cin >> paramR;
-	cout << "Please enter the value for Parameter A: ";
+	cout << "Please enter the value for starting: ";
 	cin >> paramA;
+	
+	cout << "Please enter the value for multiplying: ";
+	cin >> paramR;
+	
 	cout << "Please enter the desired length of the series: ";
 	cin >> gSeriesL;
 
@@ -105,6 +108,8 @@ void geometric(int& paramR, int& paramA, int& gSeriesL, int& gresult) {
 		gresult = gresult + (paramA * (pow(paramR,i)));
 
 	}
+
+	cout << " = " << gresult << endl;
 
 	gresult = 0; //resets so that value isnt kept the next time the function is run
 }
