@@ -82,6 +82,8 @@ void arithmetic(int&aStart, int&aDiff, int&aSeriesL, int& aresult) {
 
 //function is supposed to take input from the user and solve a*r^i until i = series length
 void geometric(int& paramR, int& paramA, int& gSeriesL, int& gresult) {
+	gresult = 0;
+
 
 	//these next few lines will prompt the user for the necessary values
 	cout << "Please enter the value for Parameter R: ";
