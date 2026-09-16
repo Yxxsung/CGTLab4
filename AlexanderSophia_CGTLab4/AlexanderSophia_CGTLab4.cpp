@@ -22,7 +22,7 @@ void printMenu() {
 
 //function takes an input from the user, verifies that it is positive, then finds the factorial value of that input
 void factorial(int& fValue, int& result_1) {
-	//&int is from the last lesson - it declares the variable that follows as a new integer so that we can use it later
+	//&int is from the last lesson - it gives the function access to the variable declared in main rather than creating a seperate copy
 	// the factorial of 5 is notated as 5!= 1 * 2 * 3 * 4 * 5 = 120.
 
 	result_1 = 1;
@@ -55,7 +55,7 @@ void factorial(int& fValue, int& result_1) {
 	//this prints out the final result at the end
 	cout << " = " << result_1 << endl;
 
-	result_1 = 1;
+	result_1 = 1; //resets so that value isnt kept the next time the function is run
 }
 
 //function takes a starting value and the difference and adds the results. Ex: 3,5,7,9 has a start of 3 and a difference of 2
@@ -79,7 +79,7 @@ void arithmetic(int&aStart, int&aDiff, int&aSeriesL, int& aresult) {
 		aresult = aresult + currentValue; //establishes the new result number
 	}
 
-	aresult = 0;
+	aresult = 0;//resets so that value isnt kept the next time the function is run
 
 }
 
@@ -106,7 +106,7 @@ void geometric(int& paramR, int& paramA, int& gSeriesL, int& gresult) {
 
 	}
 
-	gresult = 0;
+	gresult = 0; //resets so that value isnt kept the next time the function is run
 }
 
 
