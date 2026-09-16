@@ -25,7 +25,7 @@ void factorial(int& fValue, int& result_1) {
 	// the factorial of 5 is notated as 5!= 1 * 2 * 3 * 4 * 5 = 120.
 
 	//This declares result as a longlong so that it can take 64 bits or 8 bytes. This enables the user to enter high values
-	int result_1 = 1; //it wont let me define it, but I'm worried whatever it's initializing as is what's causing the weird output
+	result_1 = 1; //it wont let me define it, but I'm worried whatever it's initializing as is what's causing the weird output
 
 	cout << "Please enter a POSITIVE number: ";
 	cin >> fValue;
